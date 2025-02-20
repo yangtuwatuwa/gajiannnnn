@@ -1,24 +1,25 @@
 let gaji = 5000000;
 let i = 1;
 let absensi;
-
-do {
-    let bonus = 0;
+function mulaiiii(){
+    do {
+        let bonus = 0;
+        
+        if (i > 20) {
+            bonus = 500000;
+        }
+        absensi = confirm("Apakah anda telat?");
+        
+        let hasil = gaji + (200000 * i) + bonus; 
+        alert(`Gaji hari ke-${i} berjumlah: ${hasil}`);
     
-    if (i > 20) {
-        bonus = 500000;
-    }
-    
-    let hasil = gaji + (200000 * i) + bonus; 
-    console.log(`Gaji hari ke-${i} berjumlah: ${hasil}`);
+        
+        if (absensi == true) {
+            hasil -= 5000000;
+            alert(`Yahh, Anda telat! KAMU SAYA PECAT DAN Gaji dipotong 5jt. Sisa gaji: ${hasil}`);
+            break;
+        }
+        i++; 
+    } while (absensi === false); 
 
-    absensi = confirm("Apakah anda telat?");
-    
-    if (absensi) {
-        hasil -= 5000000;
-        console.log(`Yahh, Anda telat! Gaji dipotong 5jt. Sisa gaji: ${hasil}`);
-        break;
-    }
-
-    i++; 
-} while (i <= 30); 
+}
